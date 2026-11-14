@@ -1,13 +1,14 @@
 /* Direction: playful independent creative studio, with an image-led cover.
    Type: chunky Bricolage Grotesque display paired with clear Inter body text.
    Palette: crisp white, ink, candy pink and tangerine; photographs stay untouched.
-   Signature: pink hero name, rounded display lettering and a giant closing wordmark.
+   Signature: navigation integrated into the photographic cover, pink hero name and giant closing wordmark.
    Motion: bold photographic wipes, kinetic typography and sweeping service highlights. */
 
 :root {
   --color-bg: #ffffff;
   --color-bg-surface: #ffffff;
   --color-bg-sunken: #f5f5f5;
+  --color-accent-solid: #ff69bf;
   --color-text-primary: #111111;
   --color-text-secondary: #595959;
   --color-text-on-accent: #111111;
@@ -127,11 +128,15 @@ html:not(.js) .header-row, html:not(.js) .site-nav ul { flex-wrap: wrap; }
 .hero-full::after { content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(to top in oklab, var(--color-scrim) 0%, var(--color-scrim-mid) 65%, var(--color-scrim-edge) 100%); }
 .hero-stack { position: relative; display: grid; }
 .hero-intro { display: grid; gap: var(--space-5); max-width: 900px; }
-.hero-title { font-size: var(--type-hero); line-height: .98; font-weight: 800; letter-spacing: -.055em; color: var(--color-text-inverse); text-wrap: initial; }
+.hero-kicker { display: inline-flex; align-items: center; gap: var(--space-2); font-size: var(--type-small); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-inverse); }
+.hero-sun { position: relative; width: 22px; height: 22px; border-radius: var(--radius-disc); background: var(--color-accent-solid); flex: none; }
+.hero-sun::after { content: ""; position: absolute; inset: -6px; border-radius: var(--radius-disc); border: 2px dotted var(--color-accent-solid); animation: spin-slow 14s linear infinite; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.hero-title { font-size: clamp(2.75rem, .8rem + 7.4vw, 8rem); line-height: .92; font-weight: 800; letter-spacing: -.06em; color: var(--color-text-inverse); text-wrap: initial; text-shadow: 0 2px 24px rgb(0 0 0 / 35%); }
 .hero-title em { color: var(--color-text-inverse); text-decoration: underline; text-decoration-color: var(--color-decoration-solid); text-decoration-thickness: .045em; text-underline-offset: .09em; }
-.hero-name { color: var(--color-accent-solid); white-space: nowrap; }
+.hero-name { color: var(--color-accent-solid); white-space: nowrap; display: inline-block; transform: rotate(-1.5deg); transform-origin: left center; }
 .hero-bottom { display: grid; gap: var(--space-4); }
-.hero-lead { max-width: 43ch; font-size: var(--type-body); color: var(--color-text-inverse); line-height: 1.6; }
+.hero-lead { max-width: 43ch; font-size: clamp(1rem, .95rem + .3vw, 1.2rem); color: var(--color-text-inverse); line-height: 1.6; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 .hero-actions .button-primary { gap: var(--space-4); }
 .hero-actions svg { width: 20px; height: 20px; transition: transform 150ms var(--ease-out); }
@@ -141,9 +146,63 @@ html:not(.js) .header-row, html:not(.js) .site-nav ul { flex-wrap: wrap; }
 .hero :focus-visible { outline-color: var(--color-accent-solid); }
 @media (min-width: 60rem) {
   .hero-full { padding-block: var(--space-section); }
-  .hero-full::after { background: linear-gradient(90deg in oklab, var(--color-scrim) 0%, var(--color-scrim-mid) 48%, var(--color-scrim-edge) 80%, var(--color-scrim-clear) 100%); }
+  .hero-full::after { background: linear-gradient(90deg in oklab, var(--color-scrim) 0%, var(--color-scrim-mid) 52%, var(--color-scrim-edge) 82%, var(--color-scrim-clear) 100%); }
   .hero-intro { gap: var(--space-5); }
   .hero-bottom { gap: var(--space-5); }
+}
+/* Homepage navigation shares the photograph from the very top. */
+html.js .home-page .site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  background: transparent;
+}
+html.js .home-page .site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(to bottom in oklab, var(--color-scrim), var(--color-scrim-mid));
+  opacity: 1;
+  transition: opacity 150ms ease;
+}
+html.js .home-page .site-header:not([data-scrolled]) .brand {
+  color: var(--color-text-inverse);
+}
+html.js .home-page .site-header:not([data-scrolled]) .brand:hover {
+  color: var(--color-accent-solid);
+}
+html.js .home-page .site-header:not([data-scrolled]) :focus-visible {
+  outline-color: var(--color-accent-solid);
+}
+html.js .home-page .site-header[data-scrolled],
+html.js .home-page .site-header:has(.site-nav[data-open="true"]) {
+  background: var(--color-bg);
+}
+html.js .home-page .site-header[data-scrolled]::before,
+html.js .home-page .site-header:has(.site-nav[data-open="true"])::before {
+  opacity: 0;
+}
+html.js .home-page .site-header:has(.site-nav[data-open="true"]) .brand {
+  color: var(--color-text-primary);
+}
+html.js .home-page .hero-full {
+  min-height: min(94svh, 940px);
+  padding-block-start: calc(var(--header-height) + var(--space-6));
+}
+html.js .home-page .header-row {
+  padding-block-start: env(safe-area-inset-top, 0px);
+}
+html.js .home-page .site-nav {
+  inset-block-start: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+}
+@media (min-width: 52rem) {
+  html.js .home-page .site-header:not([data-scrolled]) .site-nav a {
+    color: var(--color-text-inverse);
+  }
+  html.js .home-page .site-header:not([data-scrolled]) .site-nav a:hover {
+    color: var(--color-accent-solid);
+  }
 }
 .section { padding-block: var(--space-section); }
 .section-head { margin-block-end: var(--space-6); }
@@ -159,6 +218,9 @@ html:not(.js) .header-row, html:not(.js) .site-nav ul { flex-wrap: wrap; }
 .selected-grid .project-meta { margin-block-start: 0; display: flex; justify-content: space-between; align-items: center; gap: var(--space-1); padding: var(--space-2) var(--space-1); }
 .selected-grid .project-meta::before { content: "0" counter(frames); font-size: var(--type-small); font-variant-numeric: tabular-nums; }
 .selected-grid .project-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.selected-grid .project-card-named .project-meta { flex-wrap: wrap; }
+.selected-grid .project-card-named .project-title { position: static; width: auto; height: auto; min-width: 0; flex: 1; overflow: visible; clip-path: none; white-space: normal; }
+.selected-grid .project-card-named .tag { flex-basis: 100%; }
 .selected-grid .tag { font-size: var(--type-small); color: var(--color-text-secondary); text-decoration: none; }
 .selected-grid .project-card:hover .tag { color: var(--color-text-primary); text-decoration: underline; }
 .collection-note { margin-block-start: var(--space-3); }
@@ -182,6 +244,24 @@ html:not(.js) .header-row, html:not(.js) .site-nav ul { flex-wrap: wrap; }
   .project-card:hover .frame img { transform: scale(1.04); }
   .selected-grid .frame::after { opacity: 0; transform: translateY(8px) rotate(-30deg); }
   .selected-grid .project-card:hover .frame::after { opacity: 1; transform: none; }
+}
+.hope-series-link { display: inline-flex; align-items: center; gap: var(--space-3); min-height: 48px; padding-block: var(--space-2); font-weight: 600; }
+.hope-series-link span { transition: transform 150ms var(--ease-out); }
+.hope-series { margin-block-start: var(--space-section); background: var(--color-bg-playful); }
+.hope-series .eyebrow { color: var(--color-accent-text); margin-block: 0 var(--space-3); }
+.hope-series .collection-head { margin-block-end: var(--space-6); }
+.hope-series .collection-head h2 { font-size: var(--type-hero); line-height: 1; }
+.hope-title-dot { color: var(--color-text-emphasis); }
+.hope-partner { margin-block-start: var(--space-3); font-weight: 600; color: var(--color-text-primary); }
+.hope-series-intro { max-width: 30ch; color: var(--color-text-secondary); }
+.hope-grid .frame { background: var(--color-bg-surface); }
+.hope-series-end { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-4); margin-block-start: var(--space-5); }
+.hope-series-end p { font: 700 var(--type-h3)/1.2 var(--font-display); }
+@media (hover: hover) and (pointer: fine) {
+  .hope-series-link:hover span { transform: translateY(3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hope-series-link:hover span { transform: none; }
 }
 #services { margin-block-start: var(--space-5); background: var(--color-bg-playful); }
 #services .section-head { max-width: 900px; }

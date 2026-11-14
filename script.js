@@ -146,7 +146,7 @@ document.querySelectorAll("[data-form]").forEach((form) => {
     if (status) {
       const emailLink = document.createElement("a");
       emailLink.className = "button button-secondary";
-      emailLink.href = `mailto:rld55478@gmail.com?subject=${encodeURIComponent(`Project inquiry: ${value("type")}`)}&body=${encodeURIComponent(body)}`;
+      emailLink.href = `mailto:rachel@rayofdavis.com?subject=${encodeURIComponent(`Project inquiry: ${value("type")}`)}&body=${encodeURIComponent(body)}`;
       emailLink.textContent = "Open inquiry in email";
       status.replaceChildren(
         document.createTextNode("Your inquiry is ready, but hasn’t been sent. Open it in your email app and send it to Rachel. "),

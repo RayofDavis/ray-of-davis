@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="styles.css">
 <script src="script.js" defer></script>
 </head>
-<body>
+<body class="home-page">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header" data-header>
@@ -49,6 +49,7 @@
     </figure>
     <div class="container hero-stack">
       <div class="hero-intro">
+        <p class="hero-kicker"><span class="hero-sun" aria-hidden="true"></span>Art · Photography · Design</p>
         <h1 class="hero-title" id="hero-title">Like a ray of<br><em>sunshine,</em> but a<br><span class="hero-name">Ray of Davis.</span></h1>
         <div class="hero-bottom">
           <p class="hero-lead">I’m Rachel Davis. I make photographs, original art, and graphic design for people and brands with something to share.</p>
@@ -75,43 +76,45 @@
         <li>
           <a class="project-card" data-photo href="assets/images/dsc01853-124a4e2e.jpg" aria-label="View photograph 01">
             <span class="frame"><img src="assets/images/dsc01853-124a4e2e.jpg" alt="Rachel Davis photograph, DSC01853" loading="lazy" decoding="async"></span>
-            <span class="project-meta"><span class="project-title">Selected frame 01</span><span class="tag">View photograph ↗</span></span>
+            <span class="project-meta"><span class="project-title">Golden hour, in motion</span><span class="tag">View photograph ↗</span></span>
           </a>
         </li>
         <li>
           <a class="project-card" data-photo href="assets/images/rld05910-9263a1e3.jpg" aria-label="View photograph 02">
             <span class="frame"><img src="assets/images/rld05910-9263a1e3.jpg" alt="Rachel Davis photograph, RLD05910" loading="lazy" decoding="async"></span>
-            <span class="project-meta"><span class="project-title">Selected frame 02</span><span class="tag">View photograph ↗</span></span>
+            <span class="project-meta"><span class="project-title">Court-side portraits</span><span class="tag">View photograph ↗</span></span>
           </a>
         </li>
         <li>
           <a class="project-card" data-photo href="assets/images/rld09485-ae760e06.jpg" aria-label="View photograph 03">
             <span class="frame"><img src="assets/images/rld09485-ae760e06.jpg" alt="Rachel Davis photograph, RLD09485" loading="lazy" decoding="async"></span>
-            <span class="project-meta"><span class="project-title">Selected frame 03</span><span class="tag">View photograph ↗</span></span>
+            <span class="project-meta"><span class="project-title">Sunrise homecoming weekend</span><span class="tag">View photograph ↗</span></span>
           </a>
         </li>
         <li>
           <a class="project-card" data-photo href="assets/images/rld07230-fd0c6b92.jpg" aria-label="View photograph 04">
             <span class="frame"><img src="assets/images/rld07230-fd0c6b92.jpg" alt="Rachel Davis photograph, RLD07230" loading="lazy" decoding="async"></span>
-            <span class="project-meta"><span class="project-title">Selected frame 04</span><span class="tag">View photograph ↗</span></span>
+            <span class="project-meta"><span class="project-title">Field notes, everyday light</span><span class="tag">View photograph ↗</span></span>
           </a>
         </li>
         <li>
-          <a class="project-card" data-photo href="assets/images/rld04918-2-75ab0758.jpg" aria-label="View photograph 05">
-            <span class="frame"><img src="assets/images/rld04918-2-75ab0758.jpg" alt="Rachel Davis photograph, RLD04918-2" loading="lazy" decoding="async"></span>
-            <span class="project-meta"><span class="project-title">Selected frame 05</span><span class="tag">View photograph ↗</span></span>
+          <a class="project-card project-card-named" data-photo href="assets/images/rld04918-2-75ab0758.jpg" aria-label="View photograph of Hope Solo">
+            <span class="frame"><img src="assets/images/rld04918-2-75ab0758.jpg" alt="Goalkeeper Hope Solo, photographed by Rachel Davis" loading="lazy" decoding="async"></span>
+            <span class="project-meta"><span class="project-title">Hope Solo — legendary goalkeeper</span><span class="tag">View photograph ↗</span></span>
           </a>
+          <a class="hope-series-link" href="#hope-solo">Explore the Hope Solo series <span aria-hidden="true">↓</span></a>
         </li>
         <li>
           <a class="project-card" data-photo href="assets/images/rld06393-2098d948.jpg" aria-label="View photograph 06">
             <span class="frame"><img src="assets/images/rld06393-2098d948.jpg" alt="Rachel Davis photograph, RLD06393" loading="lazy" decoding="async"></span>
-            <span class="project-meta"><span class="project-title">Selected frame 06</span><span class="tag">View photograph ↗</span></span>
+            <span class="project-meta"><span class="project-title">Everyday warmth, commissioned</span><span class="tag">View photograph ↗</span></span>
           </a>
         </li>
       </ul>
       <p class="collection-note">Open a frame, explore the full collection, or choose a photograph as a starting point for your project.</p>
     </div>
   </section>
+
 
   <section class="motion-band" aria-label="Art, photography, and design" data-motion-band>
     <div class="container motion-band-inner">
@@ -183,7 +186,7 @@
         <p class="eyebrow">Contact</p>
         <h2 id="contact-title">What are you<br><em>working on?</em></h2>
         <p class="section-lead">A clear brief or the beginning of an idea—either is a good place to start.</p>
-        <a class="contact-email" href="mailto:rld55478@gmail.com">rld55478@gmail.com</a>
+        <a class="contact-email" href="mailto:rachel@rayofdavis.com">rachel@rayofdavis.com</a>
       </header>
       <form class="form" data-form novalidate>
         <p class="small">Fields marked * are required. This form prepares your inquiry; you’ll send it from your email app.</p>
@@ -253,7 +256,7 @@
       <svg class="brand-ray" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <span>Ray of Davis</span>
     </a>
-    <p>Rachel Davis · Art, photography, graphic design<br><a href="mailto:rld55478@gmail.com">rld55478@gmail.com</a></p>
+    <p>Rachel Davis · Art, photography, graphic design<br><a href="mailto:rachel@rayofdavis.com">rachel@rayofdavis.com</a></p>
     <p class="small">© 2026 Ray of Davis</p>
   </div>
 </footer>
