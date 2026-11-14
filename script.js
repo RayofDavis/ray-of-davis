@@ -1,3 +1,24 @@
+// Cursor spotlight and gentle tilt on project cards (pointer devices only)
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  document.querySelectorAll(".project-card").forEach((card) => {
+    const frame = card.querySelector(".frame");
+    if (!frame) return;
+    card.addEventListener("pointermove", (event) => {
+      const box = frame.getBoundingClientRect();
+      const x = (event.clientX - box.left) / box.width;
+      const y = (event.clientY - box.top) / box.height;
+      card.style.setProperty("--mx", `${x * 100}%`);
+      card.style.setProperty("--my", `${y * 100}%`);
+      card.style.setProperty("--tilt-y", `${(x - 0.5) * 8}deg`);
+      card.style.setProperty("--tilt-x", `${(0.5 - y) * 8}deg`);
+    });
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--tilt-x", "0deg");
+      card.style.setProperty("--tilt-y", "0deg");
+    });
+  });
+}
+
 // Header: solid border once scrolled
 const header = document.querySelector("[data-header]");
 if (header) {
