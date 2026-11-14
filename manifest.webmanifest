@@ -1,0 +1,13 @@
+{
+  "name": "Ray of Davis",
+  "short_name": "Ray of Davis",
+  "description": "Art, photography, and graphic design by Rachel Davis.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#1f1f22",
+  "theme_color": "#0c0c0e",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

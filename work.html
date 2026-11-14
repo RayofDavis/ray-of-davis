@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("js")</script>
+<title>Work · Ray of Davis</title>
+<meta name="description" content="Selected art, photography, and graphic design by Rachel Davis.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="container header-row">
+    <a class="brand" href="index.html" aria-label="Ray of Davis home">
+      <svg class="brand-ray" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Ray of Davis</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="work.html" aria-current="page">Work</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </nav>
+    <a class="button button-primary header-cta" href="index.html#contact">Start a project</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <svg class="icon-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section page-intro">
+    <div class="container">
+      <p class="eyebrow">Work</p>
+      <h1 class="page-title">Selected projects</h1>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter" type="button" aria-pressed="true" data-filter="all">All Work</button>
+        <button class="filter" type="button" aria-pressed="false" data-filter="portraits">Portraits</button>
+        <button class="filter" type="button" aria-pressed="false" data-filter="campaigns">Campaigns</button>
+        <button class="filter" type="button" aria-pressed="false" data-filter="art">Art</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <ul class="project-grid" role="list" data-project-grid>
+        <li data-category="portraits"><a class="project-card" href="project-golden-hour.html"><span class="frame" style="--ratio: 4 / 5"><svg class="art" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#e8553d"/><circle cx="200" cy="210" r="110" fill="#ffb199"/><rect x="60" y="360" width="280" height="140" rx="70" fill="#1f1a14"/></svg></span><span class="project-meta"><span class="tag">Portraits</span><span class="project-title">Golden hour portraits</span></span></a></li>
+        <li data-category="campaigns"><a class="project-card" href="project-sunrise-campaign.html"><span class="frame" style="--ratio: 3 / 2"><svg class="art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="600" height="400" fill="#1f3a8a"/><circle cx="300" cy="260" r="170" fill="#f6b92b"/><rect x="40" y="40" width="200" height="30" fill="#fff4cf"/></svg></span><span class="project-meta"><span class="tag">Campaigns</span><span class="project-title">Sunrise homecoming weekend</span></span></a></li>
+        <li data-category="art"><a class="project-card" href="project-gallery-series.html"><span class="frame" style="--ratio: 1 / 1"><svg class="art" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="400" fill="#2f7d5b"/><path d="M0 300 C100 200 200 380 400 240 L400 400 L0 400Z" fill="#f6b92b"/><circle cx="110" cy="110" r="46" fill="#fff4cf"/></svg></span><span class="project-meta"><span class="tag">Art</span><span class="project-title">Field notes, everyday light</span></span></a></li>
+        <li data-category="portraits"><a class="project-card" href="project-court-portraits.html"><span class="frame" style="--ratio: 3 / 4"><svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="300" height="400" fill="#7a5cff"/><circle cx="150" cy="170" r="70" fill="#ffd9c7"/><rect x="60" y="260" width="180" height="140" rx="60" fill="#1f1a14"/></svg></span><span class="project-meta"><span class="tag">Portraits</span><span class="project-title">Court-side portraits</span></span></a></li>
+        <li data-category="campaigns"><a class="project-card" href="project-event-poster.html"><span class="frame" style="--ratio: 4 / 5"><svg class="art" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="500" fill="#f6b92b"/><rect x="40" y="60" width="320" height="60" fill="#1f1a14"/><rect x="40" y="140" width="220" height="24" fill="#1f1a14"/></svg></span><span class="project-meta"><span class="tag">Campaigns</span><span class="project-title">Community homecoming poster</span></span></a></li>
+        <li data-category="art"><a class="project-card" href="project-commission-oil.html"><span class="frame" style="--ratio: 4 / 3"><svg class="art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="300" fill="#ffb199"/><circle cx="120" cy="150" r="80" fill="#e8553d"/><circle cx="280" cy="120" r="50" fill="#1f3a8a"/></svg></span><span class="project-meta"><span class="tag">Art</span><span class="project-title">Everyday warmth, commissioned</span></span></a></li>
+      </ul>
+      <p class="empty-state" hidden data-empty>No projects in this category yet.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <a class="brand" href="index.html">
+      <svg class="brand-ray" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span>Ray of Davis</span>
+    </a>
+    <p>Rachel Davis · Art, photography, graphic design<br><a href="mailto:hello@example.com">hello@example.com</a></p>
+    <p class="small">© 2026 Ray of Davis</p>
+  </div>
+</footer>
+</body>
+</html>
