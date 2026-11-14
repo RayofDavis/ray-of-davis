@@ -307,6 +307,7 @@ html.js .home-page .site-nav {
 .contact-wrap { display: grid; gap: var(--space-6); }
 .contact-wrap .section-head { margin: 0; }
 .contact-email { display: inline-flex; align-items: center; min-height: 44px; margin-block-start: var(--space-4); overflow-wrap: anywhere; }
+.contact-phone { display: inline-flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; }
 .form { display: grid; gap: var(--space-4); min-width: 0; }
 .field { display: grid; gap: var(--space-1); }
 .field-row { display: grid; gap: var(--space-4); }
